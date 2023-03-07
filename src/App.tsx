@@ -1,11 +1,9 @@
-import './App.css'
+import Header from './components/Reader';
 
 function App() {
   return (
-    <div className="App">
-      Todo-list
-    </div>
-  )
+    <Header/>
+  );
 }
 
-export default App
+export default App;
