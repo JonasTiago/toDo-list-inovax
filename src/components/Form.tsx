@@ -61,6 +61,7 @@ export default function Form({
           className=" bg-gray-300 border-solid border-grayBorder border-2 w-10/12 h-10 p-3 rounded"
           placeholder="Descreva a tarefa aqui"
           required
+          autoComplete='off'
         />
         <input
           type="submit"
