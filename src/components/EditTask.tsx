@@ -14,7 +14,7 @@ export default function EditTask({
 }) {
   return (
     <button
-      className="bg-gray-500 w-full h-5/6 flex justify-center items-center rounded-br"
+      className="bg-gray-500 w-full h-10 sm:h-5/6 flex justify-center items-center sm:rounded-br sm:hover:opacity-90"
       onClick={() => setEdit(!edit)}
       disabled={checked}
     >

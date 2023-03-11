@@ -3,13 +3,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { BASE_URL } from '../service/urlsBase';
 
-export default function Form({
-  // update,
-  // setUptade,
-}: {
-  // update: boolean;
-  // setUptade: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+export default function Form() {
   const [task, setTask] = useState<{ text: string }>({
     text: '',
   });
@@ -46,7 +40,7 @@ export default function Form({
   }
   return (
     <form
-      className="flex items-center h-10 justify-center"
+      className="flex items-center h-10 justify-center "
       onSubmit={(e) => submitTask(e)}
     >
       <Label.Root
@@ -58,15 +52,15 @@ export default function Form({
           value={task.text}
           name="text"
           onChange={(e) => fillInForm(e.target.value)}
-          className=" bg-gray-300 border-solid border-grayBorder border-2 w-10/12 h-10 p-3 rounded"
+          className=" bg-gray-300 border-solid border-grayBorder border-2 w-10/12 sm:h-10 h-12 p-3 rounded"
           placeholder="Descreva a tarefa aqui"
           required
-          autoComplete='off'
+          autoComplete="off"
         />
         <input
           type="submit"
           value="Criar tarefa"
-          className=" bg-black text-white w-32 h-10 text-base rounded cursor-pointer"
+          className=" bg-black sm:hover:opacity-80 text-white w-24 sm:w-32 sm:font-bold h-12 sm:h-10 text-sm sm:text-base rounded cursor-pointer"
         />
       </Label.Root>
     </form>

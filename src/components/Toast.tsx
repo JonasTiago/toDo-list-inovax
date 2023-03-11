@@ -11,7 +11,7 @@ export default function ToastTask() {
 
   return (
     <div
-      className=" right-0 p-2 flex flex-col justify-center items-center fixed bg-blue-400 w-1/5 gap-2 rounded mr-2 aria-checked:hidden"
+      className="sm:right-4 right-0 w-full sm:bottom-6 bottom-0 p-2 flex flex-col justify-center items-center fixed bg-blue-400 sm:w-1/4 gap-2 rounded aria-checked:hidden"
       aria-checked={modalIsOpen}
     >
       <h4 className="text-2xl ">Ação finalizada!</h4>

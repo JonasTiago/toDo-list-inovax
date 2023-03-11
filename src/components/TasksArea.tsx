@@ -27,7 +27,7 @@ export default function TasksArea() {
   }, [tasksList]);
 
   return (
-    <section className="max-w-4xl mx-auto px-10 h-2/3 mt-16 flex flex-col ">
+    <section className=" w-full sm:max-w-4xl sm:mx-auto p-1 sm:px-10 h-2/3 mt-7 sm:mt-16 flex flex-col ">
       <Form />
       <Accountants>{tasksList}</Accountants>
       <div className=" opacity-90 w-full h-screen flex flex-col">

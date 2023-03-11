@@ -43,38 +43,40 @@ export default function Task({ children }: { children: TaskProps }) {
       .catch((res) => {
         console.log(res);
       });
-      setAction(false)
+    setAction(false);
   }
 
   return (
-    <div className=" grup w-full flex justify-between my-2">
+    <div className=" grup w-full flex sm:flex-row flex-col justify-between my-2">
       {action && <ToastTask />}
-      <div className="bg-bgTask w-1/12 flex justify-center items-center rounded-bl rounded-tl">
-        <CheckBox
-          checked={content.done}
-          checkTask={checkTask}
-          editTask={editTask}
-        />
+      <div className="flex w-full">
+        <div className="bg-bgTask w-2/12 sm:w-1/12 flex justify-center items-center sm:rounded-bl sm:rounded-tl ">
+          <CheckBox
+            checked={content.done}
+            checkTask={checkTask}
+            editTask={editTask}
+          />
+        </div>
+        {!content.done ? (
+          <input
+            type="text"
+            className=" enabled:text-black enabled:border-2 enabled:bg-white text-white text-base w-full h-20 sm:mx-1 mx-0 bottom-1  bg-bgTask sm:px-5 px-3 py-2.5 border-l truncate"
+            disabled={!edit ? true : false}
+            value={content.text}
+            onChange={(e) => fillTask(e.target.value)}
+          />
+        ) : (
+          <input
+            type="text"
+            className="   text-blue-500 text-base w-full h-20 sm:mx-1  border-l  bg-bgTask sm:px-5 px-3 py-2.5 line-through truncate"
+            disabled={true}
+            value={content.text}
+            onChange={(e) => fillTask(e.target.value)}
+          />
+        )}
       </div>
-      {!content.done ? (
-        <input
-          type="text"
-          className=" enabled:text-black enabled:border-2 enabled:bg-white text-white text-base w-full h-20 mx-1 bg-bgTask px-5 py-2.5 "
-          disabled={!edit ? true : false}
-          value={content.text}
-          onChange={(e) => fillTask(e.target.value)}
-        />
-      ) : (
-        <input
-          type="text"
-          className="   text-blue-500 text-base w-full h-20 mx-1 bg-bgTask px-5 py-2.5 line-through"
-          disabled={true}
-          value={content.text}
-          onChange={(e) => fillTask(e.target.value)}
-        />
-      )}
 
-      <div className="w-1/12 flex flex-col items-center justify-evenly">
+      <div className="sm:w-1/12 flex justify-between sm:flex-col items-baseline">
         <DeleteTask taskId={children.id} />
         <EditTask
           setEdit={setEdit}

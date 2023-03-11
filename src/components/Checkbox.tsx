@@ -10,7 +10,7 @@ export default function CheckBox({
   editTask: Function;
 }): JSX.Element {
   return (
-    <Checkbox.Root className="peer/done  flex justify-center items-center ">
+    <Checkbox.Root className="peer/done  flex justify-center items-center">
       <Checkbox.Indicator />
       {checked === false && (
         

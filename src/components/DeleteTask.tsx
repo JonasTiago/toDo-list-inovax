@@ -19,7 +19,7 @@ export default function DeleteTask({
   }
   return (
     <button
-      className="bg-red-500 w-full h-5/6 flex justify-center items-center mb-1 rounded-tr"
+      className="bg-red-500 w-full h-10 sm:h-5/6 flex justify-center items-center mb-1 sm:rounded-tr sm:hover:opacity-90"
       onClick={() => delTask(taskId)}
     >
       <FaRegTrashAlt size={25} color={'#ffffff'} />
